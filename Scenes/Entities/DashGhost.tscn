@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://fim44eyafvaj"]
+
+[ext_resource type="Texture2D" uid="uid://c2akjqb457n4a" path="res://Assets/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 01.png" id="1_50swk"]
+[ext_resource type="Script" path="res://Scripts/dash_ghost.gd" id="1_png68"]
+
+[node name="DashGhost" type="Sprite2D"]
+show_behind_parent = true
+scale = Vector2(3, 3)
+texture = ExtResource("1_50swk")
+script = ExtResource("1_png68")

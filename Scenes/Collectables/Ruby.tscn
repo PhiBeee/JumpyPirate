@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://cijuxuwbnjncg"]
+
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_6hllt"]
+[ext_resource type="Texture2D" uid="uid://bmlxvkrm0ic11" path="res://Assets/Collectibles/Diamond Effect/01.png" id="2_iraxx"]
+[ext_resource type="Texture2D" uid="uid://cb4b46pqoit3d" path="res://Assets/Collectibles/Diamond Effect/02.png" id="3_vmtvj"]
+[ext_resource type="Texture2D" uid="uid://dft0usvk2euej" path="res://Assets/Collectibles/Diamond Effect/03.png" id="4_xdpdw"]
+[ext_resource type="Texture2D" uid="uid://k5yk2crxucbj" path="res://Assets/Collectibles/Diamond Effect/04.png" id="5_n2obs"]
+[ext_resource type="Texture2D" uid="uid://kd18ir4rh7xk" path="res://Assets/Collectibles/Red Diamond/01.png" id="6_ypr7l"]
+[ext_resource type="Texture2D" uid="uid://cgm1eh8xlecxg" path="res://Assets/Collectibles/Red Diamond/02.png" id="7_ow6vx"]
+[ext_resource type="Texture2D" uid="uid://bx8irpytm5n63" path="res://Assets/Collectibles/Red Diamond/03.png" id="8_x8x4k"]
+[ext_resource type="Texture2D" uid="uid://b3docgfnebjjb" path="res://Assets/Collectibles/Red Diamond/04.png" id="9_pbpor"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_43ioo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iraxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vmtvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xdpdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n2obs")
+}],
+"loop": false,
+"name": &"collected",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ypr7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ow6vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x8x4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pbpor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkh42"]
+radius = 20.025
+
+[node name="Ruby" type="Area2D"]
+script = ExtResource("1_6hllt")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_43ioo")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wkh42")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

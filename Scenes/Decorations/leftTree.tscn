@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://diggdm2iv1mux"]
+
+[ext_resource type="Texture2D" uid="uid://jnlkv3tjk8rf" path="res://Assets/Back Palm Trees/Back Palm Tree Left 01.png" id="1_li3te"]
+[ext_resource type="Texture2D" uid="uid://bx1d2tgtwefxv" path="res://Assets/Back Palm Trees/Back Palm Tree Left 02.png" id="2_bgvis"]
+[ext_resource type="Texture2D" uid="uid://coplib3f8j476" path="res://Assets/Back Palm Trees/Back Palm Tree Left 03.png" id="3_06tkc"]
+[ext_resource type="Texture2D" uid="uid://bftsbcljkkq3n" path="res://Assets/Back Palm Trees/Back Palm Tree Left 04.png" id="4_mmq5b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pp5ro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_li3te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bgvis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_06tkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mmq5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BackTree" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pp5ro")
+autoplay = "default"

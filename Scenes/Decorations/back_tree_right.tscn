@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cybsk01mleoax"]
+
+[ext_resource type="Texture2D" uid="uid://dct20ec6612ia" path="res://Assets/Back Palm Trees/Back Palm Tree Right 01.png" id="1_ceiha"]
+[ext_resource type="Texture2D" uid="uid://bubgcjhxkdp77" path="res://Assets/Back Palm Trees/Back Palm Tree Right 02.png" id="2_500tc"]
+[ext_resource type="Texture2D" uid="uid://b0qg0rw07ymac" path="res://Assets/Back Palm Trees/Back Palm Tree Right 03.png" id="3_71mcm"]
+[ext_resource type="Texture2D" uid="uid://b81hgaugewudj" path="res://Assets/Back Palm Trees/Back Palm Tree Right 04.png" id="4_q2bmo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocix5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ceiha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_500tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_71mcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q2bmo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BackTreeRight" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ocix5")
+autoplay = "default"

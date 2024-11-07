@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://ccw7eih1n7kgq"]
+
+[ext_resource type="Script" path="res://Scripts/finish.gd" id="1_fsmwu"]
+[ext_resource type="Texture2D" uid="uid://dykcnyl5t7pq5" path="res://Assets/Flag/Flag 01.png" id="1_khjrl"]
+[ext_resource type="Texture2D" uid="uid://b1tbfgmdv87y2" path="res://Assets/Flag/Flag 02.png" id="2_phv4j"]
+[ext_resource type="Texture2D" uid="uid://fxui1830roml" path="res://Assets/Flag/Flag 03.png" id="3_gvdsh"]
+[ext_resource type="Texture2D" uid="uid://e2t62uwp658x" path="res://Assets/Flag/Flag 04.png" id="4_tmeeh"]
+[ext_resource type="Texture2D" uid="uid://w2kt8mwunhvl" path="res://Assets/Flag/Flag 05.png" id="5_dnfh3"]
+[ext_resource type="Texture2D" uid="uid://dub4s4onn5xac" path="res://Assets/Flag/Flag 06.png" id="6_bcwk7"]
+[ext_resource type="Texture2D" uid="uid://bkab5514vqdsj" path="res://Assets/Flag/Flag 07.png" id="7_yx5h3"]
+[ext_resource type="Texture2D" uid="uid://0aipof5mtqf0" path="res://Assets/Flag/Flag 08.png" id="8_cqnh6"]
+[ext_resource type="Texture2D" uid="uid://cri8q18tce2qx" path="res://Assets/Flag/Flag 09.png" id="9_q0kxo"]
+[ext_resource type="Texture2D" uid="uid://b732su87nfkok" path="res://Assets/Flag/Platform.png" id="10_mhait"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qk033"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_khjrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_phv4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gvdsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tmeeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dnfh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bcwk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yx5h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cqnh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q0kxo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jem2x"]
+size = Vector2(20, 92)
+
+[node name="Finish" type="Area2D"]
+script = ExtResource("1_fsmwu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(17, 46.5)
+sprite_frames = SubResource("SpriteFrames_qk033")
+autoplay = "default"
+frame_progress = 0.514559
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 64.5)
+texture = ExtResource("10_mhait")
+
+[node name="FinishCollision" type="CollisionShape2D" parent="."]
+position = Vector2(2, 46)
+shape = SubResource("RectangleShape2D_jem2x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

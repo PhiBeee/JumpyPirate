@@ -1,0 +1,176 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2wylrsq3mrf4"]
+
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_hmonk"]
+[ext_resource type="Texture2D" uid="uid://yc0e13qwu10a" path="res://Assets/Background/BG Image.png" id="1_qi3cv"]
+[ext_resource type="Texture2D" uid="uid://btrup0kcpnnuj" path="res://Assets/Background/Water Reflect Big 01.png" id="2_57cec"]
+[ext_resource type="Texture2D" uid="uid://dayjxk7bncbuk" path="res://Assets/Background/Water Reflect Big 02.png" id="3_1vgiq"]
+[ext_resource type="Texture2D" uid="uid://n1n7vixe0yxo" path="res://Assets/Background/Water Reflect Big 03.png" id="4_uuoo8"]
+[ext_resource type="Texture2D" uid="uid://blb7baa12jedi" path="res://Assets/Background/Water Reflect Big 04.png" id="5_iqxbc"]
+[ext_resource type="Texture2D" uid="uid://ccrwv8hl8bks6" path="res://Assets/Menu.png" id="6_qc3bx"]
+[ext_resource type="FontFile" uid="uid://des60u24it3x" path="res://Fonts/yoster.ttf" id="7_1p4c0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkqkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_57cec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1vgiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uuoo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iqxbc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmonk")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1944.0
+offset_bottom = 812.0
+texture = ExtResource("1_qi3cv")
+stretch_mode = 4
+
+[node name="WaterReflection" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(579, 549)
+scale = Vector2(6.73894, 17.7)
+sprite_frames = SubResource("SpriteFrames_wkqkr")
+autoplay = "default"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -310.0
+offset_right = 341.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_qc3bx")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.5
+offset_top = -226.0
+offset_right = 277.5
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.741176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("7_1p4c0")
+theme_override_font_sizes/font_size = 70
+text = "Congrats!!!"
+horizontal_alignment = 1
+
+[node name="PointLabel" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -95.0
+offset_right = 264.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.741176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("7_1p4c0")
+theme_override_font_sizes/font_size = 35
+text = "You finished with:
+0 Points"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.5
+offset_top = 4.0
+offset_right = 260.5
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.741176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("7_1p4c0")
+theme_override_font_sizes/font_size = 35
+text = "Would you like to try again?"
+horizontal_alignment = 1
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = 94.0
+offset_right = -29.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.741176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("7_1p4c0")
+theme_override_font_sizes/font_size = 75
+text = "Yes"
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = 93.0
+offset_right = 245.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.866667, 0.741176, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("7_1p4c0")
+theme_override_font_sizes/font_size = 75
+text = "No"
+
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
